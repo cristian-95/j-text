@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cristian.jtext.editor.EditorController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu text="File">
+                <MenuItem text="Save" onAction="#onSave"/>
+                <MenuItem text="Open" onAction="#onOpen"/>
+                <MenuItem text="Close" onAction="#onClose"/>
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem text="Delete" onAction="#onDelete"/>
+            </Menu>
+            <Menu text="Help">
+                <MenuItem text="About" onAction="#onAbout"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <bottom>
+        <HBox prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER"/>
+    </bottom>
+    <center>
+        <TextArea fx:id="areaText" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+    </center>
+</BorderPane>
