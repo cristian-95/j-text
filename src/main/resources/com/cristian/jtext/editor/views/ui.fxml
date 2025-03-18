@@ -13,11 +13,12 @@
         <MenuBar BorderPane.alignment="CENTER">
             <Menu text="File">
                 <MenuItem text="Save" onAction="#onSave"/>
+                <MenuItem text="Save as" onAction="#onSaveAs"/>
                 <MenuItem text="Open" onAction="#onOpen"/>
                 <MenuItem text="Close" onAction="#onClose"/>
             </Menu>
             <Menu text="Edit">
-                <MenuItem text="Delete" onAction="#onDelete"/>
+                <MenuItem text="Delete"/>
             </Menu>
             <Menu text="Help">
                 <MenuItem text="About" onAction="#onAbout"/>
