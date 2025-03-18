@@ -1,5 +1,6 @@
 package com.cristian.jtext.editor;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,13 +15,14 @@ public class EditorModel {
 
     public void save(TextFile textFile) {
         try {
-            Files.write(textFile.getFile(), textFile.getContent(), StandardOpenOption.CREATE); // TODO: VER SER HÁ OPÇÕES PARA ESTA INSTRUÇÃO
+            Files.write(textFile.getFile(), textFile.getContent(), StandardOpenOption.CREATE);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
     }
 
-    public void saveAs(TextFile textFile) {
+    public void saveAs(File newFile, List<String> content) {
+        TextFile textFile = new TextFile(newFile.toPath(), content);
         try {
             Files.write(textFile.getFile(), textFile.getContent(), StandardOpenOption.CREATE_NEW);
         } catch (IOException e) {

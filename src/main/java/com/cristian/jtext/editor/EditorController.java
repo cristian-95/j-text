@@ -7,6 +7,7 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.List;
 
 public class EditorController {
 
@@ -30,8 +31,8 @@ public class EditorController {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File("./"));
         var newFile = fileChooser.showSaveDialog(null);
-        TextFile textFile = new TextFile(newFile.toPath(), Arrays.asList(areaText.getText().split("\n")));
-        model.save(textFile);
+        List<String> content = Arrays.asList(areaText.getText().split("\n"));
+        model.saveAs(newFile, content);
     }
 
     @FXML
